@@ -1,2 +1,4 @@
 #Criacao do readme.md
-#Criacao da classe JulgamentoPrisioneiro para teste
+#Criacao da classe JulgamentoPrisioneiro - Caso
+#Ajuste Classe JulgamentoPrisioneiro - Caso
+
