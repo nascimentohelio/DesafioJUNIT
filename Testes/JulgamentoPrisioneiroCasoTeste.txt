@@ -1,0 +1,29 @@
+package br.com.fiap.modelo.teste;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import br.com.fiap.modelo.JulgamentoPrisioneiro;
+
+public class JulgamentoPrisioneiroTeste {
+
+	@Test
+	public void testResposta() {
+		
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		
+		int penaSuspeitaA = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
+		int penaSuspeitaB = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
+		
+		
+		assertEquals(5, penaSuspeitaA);
+		assertEquals(5, penaSuspeitaB);
+		
+		
+	}
+
+}
