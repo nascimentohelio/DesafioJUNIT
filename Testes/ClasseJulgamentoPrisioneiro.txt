@@ -1,27 +1,30 @@
-RM82852 - Helio do Nascimento
+RM82852 - HELIO DO NASCIMENTO
 
 package br.com.fiap.modelo;
 
 public class JulgamentoPrisioneiro {
-	   int PENA_INOCENCIA = 0;
-	   int PENA_CONDENACAO_MUTUA = 5;
+	   private static final int PENA_INDIVIDUAL = 0;
+	int PENA_INOCENCIA = 13;
+	   int PENA_CONDENACAO_MUTUA = 15;
 	   int PENA_CONDENACAO_INDIVIDUAL = 10;
-	   int PENA_CONDENACAO_CUMPLICES = 1;
+	   int PENA_CONDENACAO_CUMPLICES = 11;
 	   
-	   private String culpado = "Culpado";
+	  public enum Resposta{
+		  DELACAO
+	  }
 
-	  public int calculaPena(String respostaPrisioneiroA, String respostaPrisioneiroB) {
-	      if (respostaPrisioneiroA.equals("Culpado")) {
-	          if (respostaPrisioneiroB.equals("Culpado")) {
+	  public int calculaPena(Resposta respostaPrisioneiroA, Resposta respostaPrisioneiroB) {
+	      if (respostaPrisioneiroA == Resposta.DELACAO) {
+	          if (respostaPrisioneiroB == Resposta.DELACAO) {
 	            return PENA_CONDENACAO_MUTUA;
 	          } else {
-	                 return PENA_CONDENACAO_INDIVIDUAL;
+	                 return PENA_INOCENCIA;
 	                 }
 	       } else {
-	                if (respostaPrisioneiroB.contentEquals("Culpado")) {
-	                    return PENA_CONDENACAO_CUMPLICES;
+	                if (respostaPrisioneiroB == Resposta.DELACAO) {
+	                    return PENA_INDIVIDUAL;
 	                } else {
-	                         return PENA_INOCENCIA;
+	                         return PENA_CONDENACAO_CUMPLICES;
 	                        }
 	                }
 	     }
