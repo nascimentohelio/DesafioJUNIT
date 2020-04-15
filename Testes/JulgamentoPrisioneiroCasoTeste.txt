@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import br.com.fiap.modelo.JulgamentoPrisioneiro;
+RM82852 - HELIO DO NASCIMENTO
+
+import br.com.fiap.modelo.JulgamentoPrisioneiro.Resposta;
 
 public class JulgamentoPrisioneiroTeste {
 
@@ -13,15 +16,15 @@ public class JulgamentoPrisioneiroTeste {
 		
 		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
 		
-		String respostaPrisioneiroA = "Culpado";
-		String respostaPrisioneiroB = "Culpado";
+		Resposta respostaPrisioneiroA = Resposta.DELACAO;
+		Resposta respostaPrisioneiroB = Resposta.DELACAO;
 		
 		int penaSuspeitaA = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
 		int penaSuspeitaB = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
 		
 		
-		assertEquals(5, penaSuspeitaA);
-		assertEquals(5, penaSuspeitaB);
+		assertEquals(15, penaSuspeitaA);
+		assertEquals(15, penaSuspeitaB);
 		
 		
 	}
