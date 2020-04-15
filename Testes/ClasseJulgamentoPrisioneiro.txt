@@ -1,0 +1,31 @@
+RM82852 - HELIO DO NASCIMENTO
+
+package br.com.fiap.modelo;
+
+public class JulgamentoPrisioneiro {
+
+	   int PENA_INOCENCIA = 13;
+	   int PENA_CONDENACAO_MUTUA = 15;
+	   int PENA_CONDENACAO_INDIVIDUAL = 10;
+	   int PENA_CONDENACAO_CUMPLICES = 11;
+	   
+	  public enum Resposta{
+		  DELACAO
+	  }
+
+	  public int calculaPena(Resposta respostaPrisioneiroA, Resposta respostaPrisioneiroB) {
+	      if (respostaPrisioneiroA == Resposta.DELACAO) {
+	          if (respostaPrisioneiroB == Resposta.DELACAO) {
+	            return PENA_CONDENACAO_MUTUA;
+	          } else {
+	                 return PENA_INOCENCIA;
+	                 }
+	       } else {
+	                if (respostaPrisioneiroB == Resposta.DELACAO) {
+	                    return PENA_CONDENACAO_INDIVIDUAL;
+	                } else {
+	                         return PENA_CONDENACAO_CUMPLICES;
+	                        }
+	                }
+	     }
+	}
