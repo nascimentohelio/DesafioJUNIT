@@ -3,8 +3,8 @@ RM82852 - HELIO DO NASCIMENTO
 package br.com.fiap.modelo;
 
 public class JulgamentoPrisioneiro {
-	   private static final int PENA_INDIVIDUAL = 0;
-	int PENA_INOCENCIA = 13;
+
+	   int PENA_INOCENCIA = 13;
 	   int PENA_CONDENACAO_MUTUA = 15;
 	   int PENA_CONDENACAO_INDIVIDUAL = 10;
 	   int PENA_CONDENACAO_CUMPLICES = 11;
@@ -22,7 +22,7 @@ public class JulgamentoPrisioneiro {
 	                 }
 	       } else {
 	                if (respostaPrisioneiroB == Resposta.DELACAO) {
-	                    return PENA_INDIVIDUAL;
+	                    return PENA_CONDENACAO_INDIVIDUAL;
 	                } else {
 	                         return PENA_CONDENACAO_CUMPLICES;
 	                        }
